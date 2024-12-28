@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário!</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff7eb3, #ff758c, #ff6f61);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            max-width: 600px;
+        }
+        .message {
+            text-align: center;
+            max-width: 600px;
+            font-size: 1.2rem;
+            margin: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: fade-in 2s ease-in-out forwards;
+        }
+        h2 {
+            font-size: 2rem;
+            margin: 10px 0;
+        }
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fade-in 2s ease-in-out 0.5s forwards;
+        }
+        button {
+            background: #ff4500;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, background-color 0.3s;
+            animation: fade-in 2s ease-in-out 1s forwards;
+        }
+        button:active {
+            transform: scale(0.95);
+            background-color: #e63946;
+        }
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: white;
+            animation: fly 3s ease-out forwards;
+        }
+        @keyframes fly {
+            0% {
+                transform: scale(1) translate(0, 0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0.3) translate(calc(var(--x) * 500px), calc(var(--y) * 500px));
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HAPPY BIRTHDAY!</h1>
+        <h2>Para B yanca Souza Delmondes</h2>
+        <p class="message">Hoje é um dia especial, tão especial quanto você. Quando olho para trás, lembro de tudo que vivemos juntos — as risadas, 
+            os momentos de aprendizado e até as nossas “lutinhas” que sempre acabavam com um empate 
+            (ou pelo menos é isso que eu digo para não admitir que eu algumas vezes).
+            Crescer ao seu lado foi um presente que a vida me deu. Você não é só uma amiga; é uma parte essencial da minha história. 
+            Cada conversa, cada brincadeira, cada memória que construímos está gravada como as melhores páginas de um livro que nunca canso de reler.
+            Hoje, no seu aniversário, só quero te lembrar o quanto você é incrível, o quanto você transforma a vida das pessoas ao seu redor.
+            Gosto de você não só pela pessoa que você é, mas também pela pessoa que me faz ser quando estamos juntos. 
+            Você é mais que uma amiga; é alguém que admiro, valorizo e que sempre me faz sorrir.
+            Que esse novo ciclo seja tão maravilhoso quanto você merece, cheio de felicidade, saúde e sonhos realizados. 
+            Parabéns por ser quem você é e por iluminar a vida de quem tem a sorte de te conhecer. Feliz aniversário!. 🎉</p>
+        <button id="celebrate-btn">Clique para Celebrar 🌟</button>
+    </div>
+    <script>
+        const button = document.getElementById('celebrate-btn');
+
+        button.addEventListener('click', () => {
+            // Criar partículas
+            for (let i = 0; i < 100; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${window.innerWidth / 2}px`;
+                particle.style.top = `${window.innerHeight / 2}px`;
+                particle.style.setProperty('--x', (Math.random() - 0.5).toString());
+                particle.style.setProperty('--y', (Math.random() - 0.5).toString());
+                particle.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                document.body.appendChild(particle);
+
+                // Remover partículas após 3 segundos
+                setTimeout(() => particle.remove(), 3000);
+            }
+
+            // Mostrar alerta após 300ms (após o início do efeito)
+            setTimeout(() => {
+                alert('Você é maravilhosamente incrível. Feliz aniversário! 🎂');
+            }, 300);
+        });
+    </script>
+    
+</body>
+</html>

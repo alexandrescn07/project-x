@@ -1,0 +1,104 @@
+/* Estilo geral */
+body {
+  font-family: Arial, sans-serif;
+  background: black;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  overflow-x: hidden;
+}
+
+/* Títulos */
+h1.t1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 2rem;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+
+h2.niver {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-top: 1.5rem;
+  animation: pulse 2s infinite;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  animation: slideIn 2s ease-in-out forwards;
+}
+
+/* Parágrafos */
+p {
+  text-align: left;
+  font-size: 1rem;
+  margin: 0.5rem auto;
+  max-width: 600px;
+  line-height: 1.6;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Listas */
+ul {
+  list-style: square;
+  margin: 1rem auto;
+  padding: 0;
+  max-width: 600px;
+  text-align: left;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+.lt {
+  text-align: center;
+}
+
+ul li {
+  margin: 0.5rem 0;
+}
+
+/* Links */
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #ff4500;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+      opacity: 0;
+      transform: translateX(-50px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+}
+
